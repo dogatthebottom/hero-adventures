@@ -8,18 +8,16 @@ import level.field.impl.FieldXYImpl;
 import level.field.position.Position;
 import level.field.position.impl.PositionXYImpl;
 import level.gamemap.GameMap;
-
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.IntStream;
 
 public class GameMapFromFileImpl implements GameMap {
 
     private Map<Position, Field> gameMap;
 
-    public GameMapFromFileImpl(String filePath) throws Exception {
-        this.gameMap = this.readFileAndInitMap(filePath);
+    public GameMapFromFileImpl(String mapFilePath) throws Exception {
+        this.gameMap = this.readFileAndInitMap(mapFilePath);
     }
 
     public Map<Position, Field> getGameMap() {
@@ -36,7 +34,6 @@ public class GameMapFromFileImpl implements GameMap {
                 throw new Exception("The MAP file has zero length.");
             }
             int lineCount = this.lineCount(mapFile);
-            System.out.println("lineCount==" + lineCount);
             FileReader fr = new FileReader(mapFile);
             BufferedReader reader = new BufferedReader(fr);
             String line = reader.readLine();
@@ -61,6 +58,7 @@ public class GameMapFromFileImpl implements GameMap {
                 x = 0;
                 y++;
             }
+            reader.close();
         }
 
         return ret;
@@ -74,6 +72,7 @@ public class GameMapFromFileImpl implements GameMap {
         while (reader.readLine() != null) {
             ret++;
         }
+        reader.close();
         return ret;
     }
 
@@ -102,11 +101,16 @@ public class GameMapFromFileImpl implements GameMap {
         ret.setSouthBorder(s);
         ret.setWestBorder(w);
 
-        return new FieldXYBordersImpl();
+        return ret;
     }
 
     @Override
     public String printMap() {
         return this.getGameMap().toString();
+    }
+
+    @Override
+    public Map<Position, Field> getFields() {
+        return this.getGameMap();
     }
 }

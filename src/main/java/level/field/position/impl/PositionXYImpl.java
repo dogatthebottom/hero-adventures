@@ -17,6 +17,14 @@ public class PositionXYImpl implements Position {
         }
     }
 
+    public int getXCoordinate() {
+        return xCoordinate;
+    }
+
+    public int getYCoordinate() {
+        return yCoordinate;
+    }
+
     @Override
     public String printPosition() {
         return "XY_Coordinates=={" + xCoordinate + ":" + yCoordinate + "}";

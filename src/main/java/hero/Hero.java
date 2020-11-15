@@ -1,8 +1,15 @@
 package hero;
 
-import level.field.Field;
 import movements.MovementTypes;
 
 public interface Hero {
-    Field move(MovementTypes mv);
+    void move(MovementTypes mv) throws Exception;
+
+    void play() throws Exception;
+
+    String printRespawnPosition();
+
+    String printCurrentPosition();
+
+    void printRoute();
 }
