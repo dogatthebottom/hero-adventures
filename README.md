@@ -30,6 +30,7 @@ The hero cannot go on the squares occupied by the impenetrable woods.
 
 # Game
 You could find needed game files (game_files.zip) in release 1.0 
+
 Enter to the console full path to the map file and to the hero file and see results.
 
 INFO: Enter file path to the MAP:
