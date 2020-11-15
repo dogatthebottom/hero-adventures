@@ -11,7 +11,7 @@ mvn install
 # Run
 java -jar hero-adventures-1.0.jar
 
-#Rule
+# Rule
 The map is modelled using characters in a text file in UTF-8 format.
 '#' impenetrable woods
 ' ' (space character): box where the hero can move
@@ -29,6 +29,7 @@ The hero cannot go beyond the edges of the map.
 The hero cannot go on the squares occupied by the impenetrable woods.
 
 # Game
+You could find game files(game_files.zip) in release 1.0 
 Enter to the console full path to the map file and to the hero file and see results.
 
 INFO: Enter file path to the MAP:
