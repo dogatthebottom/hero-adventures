@@ -29,9 +29,10 @@ The hero cannot go beyond the edges of the map.
 The hero cannot go on the squares occupied by the impenetrable woods.
 
 # Game
-Enter to the console full path to the map file and to the hero file and see results
+Enter to the console full path to the map file and to the hero file and see results.
 
-INFO: Enter file path of MAP:
+INFO: Enter file path to the MAP:
 <full_path_to_the_map_file>
-INFO: Enter file path of HERO:
+
+INFO: Enter file path to the HERO:
 <full_path_to_the_map_file>
