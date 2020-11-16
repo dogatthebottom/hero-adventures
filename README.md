@@ -1,5 +1,5 @@
 # hero-adventures
-A hero adventures himself in a dangerous world fighting is way through the dark woods.
+A hero  in a dangerous world fighting his way through the dark woods.
 
 # Description
 The exercise aims to reproduce the movements of the hero on a map.
@@ -29,9 +29,9 @@ The hero cannot go beyond the edges of the map.
 The hero cannot go on the squares occupied by the impenetrable woods.
 
 # Game
-You could find needed game files (game_files.zip) in release 1.0 
+You can find the game files in a game_files.zip 
 
-Enter to the console full path to the map file and to the hero file and see results.
+In the console enter a full path to the map file and to the hero file to see the results
 
 INFO: Enter file path to the MAP:
 <full_path_to_the_map_file>

@@ -2,6 +2,7 @@ package hero.impl;
 
 import hero.Hero;
 import level.field.Field;
+import level.field.background.BackgroundTypes;
 import level.field.border.impl.FieldXYBordersImpl;
 import level.field.impl.FieldXYImpl;
 import level.field.position.Position;
@@ -109,7 +110,7 @@ public class HeroFromFileImpl implements Hero {
         switch (mv) {
             case NORTH:
                 checkField = this.getGameMap().getFields().get(new PositionXYImpl(currentPositionXY.getXCoordinate(), currentPositionXY.getYCoordinate() - 1));
-                if (checkField.drawFieldBackground().equals("#")) {
+                if (checkField.drawFieldBackground().equals(BackgroundTypes.FOREST.getBackgroundType())) {
                     System.out.println("You LOOSE!");
                     System.out.println("END GAME POSITION=="+currentFieldXY.printFieldPosition());
                     throw new Exception("You can not go to next field because of there is FORREST field");
