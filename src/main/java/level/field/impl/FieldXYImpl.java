@@ -8,7 +8,10 @@ import level.field.position.Position;
 import level.field.position.impl.PositionXYImpl;
 
 import java.util.Objects;
-
+/**
+ * An object implements Field interface.
+ * An object is implementation of Field with X and Y coordinates.
+ */
 public class FieldXYImpl implements Field {
 
     private final Position position;

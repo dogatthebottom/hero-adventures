@@ -3,6 +3,10 @@ package level.field.position.impl;
 import level.field.position.Position;
 import java.util.Objects;
 
+/**
+ * An object implements Position interface.
+ * An object is implementation of X and Y coordinates.
+ */
 public class PositionXYImpl implements Position {
 
     private final int xCoordinate;

@@ -22,7 +22,10 @@ public class HeroFromFileImpl implements Hero {
     private Field currentField;
     private List<MovementTypes> route = new ArrayList<MovementTypes>();
     private GameMap gameMap;
-
+    /**
+     * An object implements Hero interface.
+     * An object reads the property file during construction faze to init its fields.
+     */
     public HeroFromFileImpl(GameMap gameMap, String heroFilePath) throws Exception {
         this.gameMap = gameMap;
         this.readFileAndInitHero(heroFilePath);
@@ -112,7 +115,7 @@ public class HeroFromFileImpl implements Hero {
                 checkField = this.getGameMap().getFields().get(new PositionXYImpl(currentPositionXY.getXCoordinate(), currentPositionXY.getYCoordinate() - 1));
                 if (checkField.drawFieldBackground().equals(BackgroundTypes.FOREST.getBackgroundType())) {
                     System.out.println("You LOOSE!");
-                    System.out.println("END GAME POSITION=="+currentFieldXY.printFieldPosition());
+                    System.out.println("END GAME POSITION==" + currentFieldXY.printFieldPosition());
                     throw new Exception("You can not go to next field because of there is FORREST field");
                 } else {
                     this.setCurrentField(checkField);
@@ -122,7 +125,7 @@ public class HeroFromFileImpl implements Hero {
                 checkField = this.getGameMap().getFields().get(new PositionXYImpl(currentPositionXY.getXCoordinate() + 1, currentPositionXY.getYCoordinate()));
                 if (checkField.drawFieldBackground().equals("#")) {
                     System.out.println("You LOOSE!");
-                    System.out.println("END GAME POSITION=="+currentFieldXY.printFieldPosition());
+                    System.out.println("END GAME POSITION==" + currentFieldXY.printFieldPosition());
                     throw new Exception("You can not go to next field because of there is FORREST field");
                 } else {
                     this.setCurrentField(checkField);
@@ -132,7 +135,7 @@ public class HeroFromFileImpl implements Hero {
                 checkField = this.getGameMap().getFields().get(new PositionXYImpl(currentPositionXY.getXCoordinate(), currentPositionXY.getYCoordinate() + 1));
                 if (checkField.drawFieldBackground().equals("#")) {
                     System.out.println("You LOOSE!");
-                    System.out.println("END GAME POSITION=="+currentFieldXY.printFieldPosition());
+                    System.out.println("END GAME POSITION==" + currentFieldXY.printFieldPosition());
                     throw new Exception("You can not go to next field because of there is FORREST field");
                 } else {
                     this.setCurrentField(checkField);
@@ -189,7 +192,7 @@ public class HeroFromFileImpl implements Hero {
             if (lineCoordinates == null || lineCoordinates.length() == 0) {
                 throw new Exception("The COORDINATES line is null or has zero length");
             } else {
-                System.out.println("Start coordinates=="+lineCoordinates);
+                System.out.println("Start coordinates==" + lineCoordinates);
                 String[] coordinates = lineCoordinates.split(",");
                 if (coordinates.length != 2) {
                     throw new Exception("Wrong coordinates line format.");
@@ -200,7 +203,7 @@ public class HeroFromFileImpl implements Hero {
                         throw new Exception("Wrong the start field. The start field is out of the GAME MAP.");
                     } else {
                         this.setRespawnField(start);
-                        if (this.getRespawnField().drawFieldBackground().equals("#")){
+                        if (this.getRespawnField().drawFieldBackground().equals("#")) {
                             throw new Exception("Wrong ths start field. The start field is the FORREST");
                         }
                         this.setCurrentField(start);
@@ -211,7 +214,7 @@ public class HeroFromFileImpl implements Hero {
             if (lineRoute == null || lineRoute.length() == 0) {
                 throw new Exception("The ROUTE line is null or has zero length");
             } else {
-                System.out.println("Route=="+lineRoute);
+                System.out.println("Route==" + lineRoute);
                 for (char c : lineRoute.trim().toCharArray()) {
                     MovementTypes mt = MovementTypes.get(String.valueOf(c));
                     if (mt != null) {

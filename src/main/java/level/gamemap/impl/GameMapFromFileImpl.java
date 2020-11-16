@@ -12,6 +12,10 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * An object implements GameMap interface.
+ * An object reads the property file during construction faze to init its fields.
+ */
 public class GameMapFromFileImpl implements GameMap {
 
     private Map<Position, Field> gameMap;
@@ -102,11 +106,6 @@ public class GameMapFromFileImpl implements GameMap {
         ret.setWestBorder(w);
 
         return ret;
-    }
-
-    @Override
-    public String printMap() {
-        return this.getGameMap().toString();
     }
 
     @Override

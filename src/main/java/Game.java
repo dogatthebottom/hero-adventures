@@ -1,12 +1,15 @@
 import hero.Hero;
 import hero.impl.HeroFromFileImpl;
-import level.field.position.impl.PositionXYImpl;
 import level.gamemap.GameMap;
 import level.gamemap.impl.GameMapFromFileImpl;
-
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+/**
+ *The Game class is used to run the game.
+ *The Game class uses java.util.Scanner to get input of console to init MAP and HERO.
+ *The game class prints the game results to the console when it finish its work.
+ */
 public class Game {
     public static void main(String[] args) {
         Logger log = Logger.getLogger(Game.class.getName());

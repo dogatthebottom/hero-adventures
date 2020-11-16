@@ -3,6 +3,10 @@ package level.field.border.impl;
 import level.field.border.FieldBorders;
 import java.util.Objects;
 
+/**
+ * An object is the implementation of FieldBorders interface
+ * An object is the FieldBorders of Field with X and Y coordinates.
+ */
 public class FieldXYBordersImpl implements FieldBorders {
 
     private boolean northBorder;
